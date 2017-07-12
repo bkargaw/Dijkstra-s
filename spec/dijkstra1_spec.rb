@@ -24,7 +24,7 @@ describe 'dijkstra1' do
       [v.value, data[:cost]]
     end
 
-    expect(output).to eq([["A", 0], ["C", 5], ["D", 7], ["B", 8]])
+    expect(output.sort{|a,b| a[1]<=>b[1]}).to eq([["A", 0], ["C", 5], ["D", 7], ["B", 8]])
   end
 
 end

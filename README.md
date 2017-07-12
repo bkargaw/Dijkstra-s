@@ -58,4 +58,3 @@ Finally, with these tools in hand, we can return to write our second implementat
 Make sure you pass all of the specs!
 
 What is the time complexity (in terms of vertices and edges) for our second implementation of Dijkstra's?
-# Dijkstra-s
