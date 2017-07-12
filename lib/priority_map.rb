@@ -3,8 +3,12 @@ require 'byebug'
 class PriorityMap
   def initialize(&prc)
     @map = {}
-    prc = Proc.new{ |v1, v2| @map[v1] <=> @map[v2] }
-    @queue = BinaryMinHeap.new(&prc)
+    newprc = Proc.new do |v1, v2|
+      value1 = self[v1]
+      value2 = self[v2]
+      prc.call(value1, value2)
+    end
+    @queue = BinaryMinHeap.new(&newprc)
   end
 
   def [](key)
